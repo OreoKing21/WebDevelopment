@@ -18,3 +18,7 @@ To Turn On:
 NetSh Advfirewall set allrprofiles state on
 To check the status of Windows Firewall: 
 Netsh Advfirewall show allprofiles
+
+Gain admin access:
+
+https://4sysops.com/archives/offline-activate-the-built-in-administrator-on-windows-10-without-signing-in/
