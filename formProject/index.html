@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>My Order Form</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+		<link rel="stylesheet" href="/lib/w3.css">
+		<link href="https://fonts.googleapis.com/css?family=Delius+Unicase|Pangolin" rel="stylesheet">
+		<style>
+			body {
+				background-color: #ADADAD;
+				background-size: 500px;
+			}
+
+			h1 {
+				font-family: 'Delius Unicase', cursive;
+				color: #000000;
+				text-align: center;
+			}
+
+			h2 {
+				font-family: 'Pangolin', cursive;
+				color: #000000;
+				text-align: center;
+			}
+			#task {
+				text-align: center;
+			}
+		</style>
+		<script>
+			function w3_open() {
+				document.getElementById("main").style.marginLeft = "25%";
+				document.getElementById("mySidebar").style.width = "25%";
+				document.getElementById("mySidebar").style.display = "block";
+				document.getElementById("openNav").style.display = 'none';
+			}
+			function w3_close() {
+				document.getElementById("main").style.marginLeft = "0%";
+				document.getElementById("mySidebar").style.display = "none";
+				document.getElementById("openNav").style.display = "inline-block";
+			}
+			
+			
+			
+		</script>
+		<script src="accounting.js"></script>
+		<script src="orderProcessing.js"></script>
+
+	</head>
+
+	<body>
+		<div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left" style="display:none" id="mySidebar">
+			<button class="w3-bar-item w3-button w3-large"
+			onclick="w3_close()">
+				Close &times;
+			</button>
+			<a href="http://www.zumiez.com/" class="w3-bar-item w3-button">Zumiez.com</a>
+			<a href="http://www.planbskateboards.com/" class="w3-bar-item w3-button">Plan B Skateboards</a>
+			<a href="http://www.thrashermagazine.com/" class="w3-bar-item w3-button">Thrasher Magazine</a>
+		</div>
+
+		<div class="w3-main" id="main">
+
+			<div class="w3-grey">
+				<button class="w3-button w3-grey w3-xlarge" onclick="w3_open()">
+					&#9776;
+				</button>
+				<div class="w3-container"> </div>
+			</div>
+			<h1>My Order Form!</h1>
+			<h2>Mason Powell /2017</h2>
+			<div class="taskList" id="task">
+			<h3>Task List:</h3>
+			<ul>
+				<li>
+					Shipping -- debugging check point grade (all code is given)
+				</li>
+				<li>
+					Size (Radio Button) -- debugging check point grade (all code is given)
+				</li>
+				<li>
+					Total Cost -- Given partial code, add code to complete
+				</li>
+				<li>
+					Verify Order -- Given partial code, add code to complete
+				</li>
+				<li>
+					Add Description Pages
+				</li>
+				<li>
+					Place on local server
+				</li>
+				<li>
+					Place on central server
+				</li>
+			</ul>
+		</div>
+		<br>
+
+		<div class="w3-bar w3-border w3-light-grey">
+			<a href="#" class="w3-bar-item w3-button">Home</a>
+			<a href="#" class="w3-bar-item w3-button">Link 1</a>
+			<a href="#" class="w3-bar-item w3-button">Link 2</a>
+			<a href="#" class="w3-bar-item w3-button">Link 3</a>
+		</div>
+
+		<br>
+			<br>
+			<hr>
+			<br>
+			<p id="showShipper"> </p>
+			<p id="showSize"> </p>
+
+			<div align="center">
+				<form name="orderForm">
+					<table style="background-color:#E6E6FA" border="2" width="920" cellpadding="5" cellspacing="0" summary="">
+						<tbody>
+							<tr style="background-color:#8E8E8E">
+								<td colspan="4" align="center"><b>Order Form</b></td>
+							</tr>
+							<tr style="background-color:#b690d5">
+								<td>Item</td>
+								<td>Qty</td>
+								<td>Each</td>
+								<td align="right">Total</td>
+							</tr>
+							<tr>
+								<td>Custom T-Shirt</td>
+								<td>
+								<input name="line" type="text" size="5" value="" onkeyup="count(this.form,0,19.99)">
+								</td>
+								<td>$ 19.99</td>
+								<td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+								</td>
+							</tr>
+							<tr>
+								<td>Custom Hoodie</td>
+								<td>
+								<input name="line" type="text" size="5" value="" onkeyup="count(this.form,1,24.99)">
+								</td>
+								<td>$ 24.99</td>
+								<td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+								</td>
+							</tr>
+							<tr>
+								<td>Custom Beach Towel</td>
+								<td>
+								<input name="line" type="text" size="5" value="" onkeyup="count(this.form,2,15.50)">
+								</td>
+								<td>$ 15.50</td>
+								<td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+								</td>
+							</tr>
+							<tr>
+								<td>Custom Tumbler Mug</td>
+								<td>
+								<input name="line" type="text" size="5" value="" onkeyup="count(this.form,3,17.99)">
+								</td>
+								<td>$ 17.99</td>
+								<td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+								</td>
+							</tr>
+							<tr>
+								<td>Pack of Stickers</td>
+								<td>
+								<input name="line" type="text" size="5" value="" onkeyup="count(this.form,4,3.99)">
+								</td>
+								<td>$ 3.99</td>
+								<td align="right">
+								<input name="line_sum" type="text" size="10" readonly>
+								</td>
+							</tr>
+							<tr style="background-color:#b690d5">
+								<td colspan="3" align="right">Options Total:</td>
+								<td align="right">
+								<input name="options_total" type="text" size="10" readonly>
+								</td>
+							</tr>
+
+							<tr>
+							<td>Size</td>
+
+							<td>
+							<input type="radio" name="size" onclick="setSize(this.value)" value="Extra Small" checked>
+							Extra Small
+							<br>
+							<input type="radio" name="size" onclick="setSize(this.value)" value="Small">
+							Small
+							<br>
+							<input type="radio" name="size" onclick="setSize(this.value)" value="Medium">
+							Medium
+							<br>
+							<input type="radio" name="size" onclick="setSize(this.value)" value="Large">
+							Large
+							<br>
+							<input type="radio" name="size" onclick="setSize(this.value)" value="Extra Large">
+							Extra Large
+							<br>
+							<br>
+							Your size is:
+							<input type="text" id="mySize">
+							</td>
+
+							<td> Extra Small $ 4.95
+							<br>
+							Small $ 9.95
+							<br>
+							Medium $ 14.95
+							<br>
+							Large $ 19.95
+							<br>
+							Extra Large $ 24.95 </td>
+
+							<td align="right">
+							<input id="lineSize" type="text" size="10" readonly>
+							</td>
+						</tr>
+
+						<!--	<td align="right">
+						<input name="line_sum" type="text" size="10" readonly>
+						</td>
+						</tr> -->
+
+						<tr>
+							<td>Shipping</td>
+
+							<td>
+							<select id="selectShipper">
+								<option>USPS</option>
+								<option>UPS</option>
+								<option>FedEx</option>
+								<option>Pick Up</option>
+							</select>
+							<br>
+							Shipped By:
+							<input type="text" id="previewShipper">
+							<input type="button" onclick="setShipper()" value="Submit">
+							</td>
+
+							<td> USPS $ 20.95
+							<br>
+							UPS $ 24.95
+							<br>
+							FedEx $ 29.95
+							<br>
+							Pick Up $ 0.00 </td>
+
+							<td align="right">
+							<input name="finalShip" type="text" size="10" readonly>
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="3" align="left">Sales Tax:</td>
+							<td align="right">
+							<input name="salesTax" type="text" size="10" readonly>
+							</td>
+						</tr>
+
+						<tr style="background-color:#6EFFAF">
+							<td colspan="2" align="left">Calculater the TOTAL COST OF THIS ORDER:</td>
+							<td align="right">
+							<input type="button" onclick="calculateTotal()" value="Total Cost">
+							</td>
+							<td align="right">
+							<input name="finalTotal" type="text" size="10" readonly>
+							</td>
+						</tr>
+
+						<tr style="background-color:#8E8E8E">
+							<td>
+							<input type="button" value="Reset" onclick="init()">
+							</td>
+							<td colspan="3" align="center">
+							<input type="button" value="Press to Verify Order" onclick="get_data(this.form)">
+							</td>
+
+						</tr>
+
+					</tbody>
+				</table>
+
+				<form name="confirmationForm">
+					<table style="background-color:#e0e0eb" border="4" width="900" cellpadding="5" cellspacing="0" summary="">
+						<tbody>
+							<tr>
+								<td align="center">								<textarea name="order" rows="10" cols="120"></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+	</body>
+
+</html>
